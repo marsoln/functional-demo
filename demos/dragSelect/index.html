@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>
+  ul,li{
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    width:500px;
+  }
+  ul{
+    margin-top:120px;
+  }
+  li{
+    text-align: center;
+    padding:6px;
+    border:1px solid #eaeaea;
+    border-bottom:none;
+    transition: transform 0.35s ease,background-color 0.41s ease;
+  }
+  li:last-of-type{
+    border-bottom:1px solid #eaeaea;
+  }
+  li.selected{
+    transform:scale(1.1,1.2);
+    background-color: #38658C;
+    color:#eaeaea;
+  }
+  .selectRange{
+    position: fixed;
+    z-index: 99;
+    display: none;
+    width: 0;
+    height:0;
+    background-color: rgba(10, 180, 205, 0.23);
+    border:1px solid rgba(55,134,200,0.6);
+  }
+</style>
+</head>
+<body>
+  <header style="text-align:center">
+    <h2>Drag Select</h2>
+  </header>
+  <section class='container'>
+    <ul id='list'>
+    </ul>
+  </section>
+  <div class="selectRange"></div>
+  <footer>
+  </footer>
+  <script src='dragSelect.js'></script>
+</body>
+</html>
