@@ -1,11 +1,4 @@
-var arr = Array(10).fill('')
-for (i in arr) {
-  var _item = document.createElement('li')
-  _item.innerText = `list item [${++i}]`
-  list.appendChild(_item)
-}
-
-((_container, _list, _rangeCover, chosenClassName) => {
+export default function (_container, _list, _rangeCover, chosenClassName) {
   var onPressed = false
   var touchPoint
   /*
@@ -94,4 +87,4 @@ for (i in arr) {
       _container.addEventListener('mousemove', mouseMove)
     }
   })
-})(document, document.querySelectorAll('#list li'), document.querySelector('.selectRange'), 'selected')
+}

@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+
+<head>
+    <meta charset="utf8" />
+    <style>
+        body,
+        ul,
+        li {
+            padding: 0;
+            margin: 0
+        }
+        
+        svg {
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+            min-height: 600px;
+        }
+        
+        polygon {
+            background-color: #e3e3e3;
+            stroke: #ff47d9;
+            fill: #ace;
+        }
+        
+        .header {
+            padding-left: 20%;
+        }
+        
+        input {
+            border: none;
+            border-bottom: 2px solid #ace;
+            line-height: 26px;
+        }
+        
+        button {
+            transition: color .5s ease-in-out, background-color 1.3s ease-in-out;
+            height: 26px;
+            padding: 2px 18px;
+            border: none;
+            margin: 4px 12px;
+            box-shadow: 4px 2px 11px #c7c7c7;
+        }
+        
+        button:hover {
+            background-color: #3e3e3e;
+            color: #ecae3e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <input id='angleAmount' placeholder="边数" value="5" type='text' />
+        <input id='valueArr' placeholder="各边长度" value="1,2,3,4,5" type='text' />
+        <button id='btnReset'>生成图像</button>
+    </div>
+    <svg id='container'>
+        <polygon id='polygon'></polygon>
+    </svg>
+    <script src='../../dist/polygon.bundle.js'></script>
+</body>
+
+</html>
