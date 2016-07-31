@@ -1,18 +1,19 @@
 import PolygonCalculator from '../../src/polygonCalculator'
 
-let $reset = btnReset
 let $angleAmount = angleAmount
 let $polygon = polygon
 let $container = container
 let _forEach = [].forEach
 let _reduce = [].reduce
-// amount changed
+
+// amount of the angles changed
 $angleAmount.addEventListener('change', function () {
     let _newAmount = this.value
     amountDisplay.innerText = _newAmount
     generateThePointRangeBars(_newAmount)
 })
 
+// some value changed
 barsContainer.addEventListener('change', (ev) => {
     let $target = ev.target || ev.srcElement
     if (~$target.className.indexOf('whatever')) {
@@ -49,4 +50,5 @@ let reDraw = () => {
         alert(e.message)
     }
 }
+
 generateThePointRangeBars(5)
