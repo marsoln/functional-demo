@@ -1,0 +1,41 @@
+@import 'basic';
+
+svg {
+  display: block;
+  width: 60%;
+  margin: 0 auto;
+  min-height: 600px;
+}
+
+polygon {
+  background-color: #e3e3e3;
+  stroke: #ff47d9;
+  fill: #ace;
+}
+
+.header {
+  padding-left: 20%;
+}
+
+input {
+  border: none;
+  border-bottom: 2px solid #ace;
+  line-height: 26px;
+  min-width: 200px;
+  text-align: center;
+}
+
+button {
+  transition: color .5s ease-in-out, background-color 1.3s ease-in-out;
+  height: 26px;
+  padding: 2px 18px;
+  border: none;
+  margin: 8px 0;
+  box-shadow: 4px 2px 11px #c7c7c7;
+
+  &:hover {
+    background-color: #3e3e3e;
+    color: #ecae3e;
+  }
+}
+        
