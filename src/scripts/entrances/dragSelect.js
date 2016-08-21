@@ -1,4 +1,4 @@
-import dragSelectInit from '../../src/dragSelect'
+import dragSelectInit from '../modules/dragSelect'
 var arr = Array(10).fill('')
 for (let i in arr) {
     var _item = document.createElement('li')

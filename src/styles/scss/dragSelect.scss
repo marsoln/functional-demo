@@ -2,10 +2,11 @@
 
 ul {
   margin-top: 120px;
-
+  &,li{
+    margin: 0 auto;
+  }
   li {
     width: 500px;
-    margin: 0 auto;
     text-align: center;
     padding: 6px;
     border: 1px solid #eaeaea;

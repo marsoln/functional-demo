@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "----",
   "main": "entry.js",
-  "scripts": {},
+  "scripts": {
+    "build": "gulp build"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marsoln/functionalDemo.git"
@@ -19,10 +21,17 @@
     ]
   },
   "homepage": "https://github.com/marsoln/functionalDemo#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-core": "^6.11.4",
     "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0"
-  },
-  "devDependencies": {}
+    "babel-preset-es2015": "^6.9.0",
+    "gulp": "^3.9.1",
+    "gulp-filter": "^4.0.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rev-all": "^0.8.24",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "through2": "^2.0.1",
+    "webpack-stream": "^3.2.0"
+  }
 }

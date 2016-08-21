@@ -1,4 +1,4 @@
-import PolygonCalculator from '../../src/polygonCalculator'
+import PolygonCalculator from '../modules/polygonCalculator'
 
 let $angleAmount = angleAmount
 let $polygon = polygon
