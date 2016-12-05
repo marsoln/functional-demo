@@ -2,14 +2,16 @@
  * 获取easeInOut函数
  * 
  * @param {number} duration 整体时间(秒)
- * @param {number} period 周期时间(毫秒)
+ * @param {number} frame 帧数(每秒)
  * @param {number} start 起始值
  * @param {number} increase 增长值
+ * 
+ * @return {Function} 返回ease-in-out线性函数
  */
-const EaseInOutGenerator = (duration, period, start, increase) => {
-    let time_span = 1 / period
+const EaseInOutGenerator = (duration, frame, start, increase) => {
+    let time_span = 1 / frame
     let curr_time = 0
-    return function () {
+    return function() {
         let ret
         let time = curr_time
         if (time == 0) {

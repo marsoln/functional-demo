@@ -52,18 +52,18 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var period = 20;
+	var frame = 60;
 	var $bar = document.querySelector('.bar');
 	var $btn = document.querySelector('.start');
 	var itv = -1;
 
 	$btn.addEventListener('click', function () {
-	    var easeInOut = (0, _easeInOut2.default)(5, period, 0, 100);
+	    var easeInOut = (0, _easeInOut2.default)(3, frame, 0, 100);
 	    $bar.style.width = 0;
 	    clearInterval(itv);
 	    itv = setInterval(function () {
 	        $bar.style.width = easeInOut() + '%';
-	    }, period);
+	    }, 1000 / frame);
 	});
 
 /***/ },
@@ -79,12 +79,14 @@
 	 * 获取easeInOut函数
 	 * 
 	 * @param {number} duration 整体时间(秒)
-	 * @param {number} period 周期时间(毫秒)
+	 * @param {number} frame 帧数(每秒)
 	 * @param {number} start 起始值
 	 * @param {number} increase 增长值
+	 * 
+	 * @return {Function} 返回ease-in-out线性函数
 	 */
-	var EaseInOutGenerator = function EaseInOutGenerator(duration, period, start, increase) {
-	    var time_span = 1 / period;
+	var EaseInOutGenerator = function EaseInOutGenerator(duration, frame, start, increase) {
+	    var time_span = 1 / frame;
 	    var curr_time = 0;
 	    return function () {
 	        var ret = void 0;
