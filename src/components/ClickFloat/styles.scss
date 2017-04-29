@@ -1,0 +1,19 @@
+:root {
+    --length: 30px;
+}
+
+.container {
+    cursor: pointer;
+    min-height: 300px;
+    background-color: silver;
+}
+
+.element {
+    position: absolute;
+    transition: all 1.2s linear;
+    width: var(--length);
+    height: var(--length);
+    border-radius: 50%;
+    margin-left: calc(var(--length)/2*-1);
+    margin-top: calc(var(--length)/2*-1);
+}
