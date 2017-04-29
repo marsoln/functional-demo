@@ -1,7 +1,6 @@
 import React from 'react'
 import styles from './styles.scss'
 import radiansGen from '../../modules/radiansGenerator'
-import $ from 'jquery'
 
 // 浮动范围
 const GEN = new radiansGen({

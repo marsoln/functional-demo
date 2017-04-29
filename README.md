@@ -1,15 +1,19 @@
-# 一些功能性的小DEMO
+# some functional demo with react
 
-----
+## Intro
 
-## 说明
+- install pkg via yarn `yarn install` or npm `npm i`
+- run dev server `yarn start` or `npm start`
+- view it in your browser `http://localhost:8080` (if the port is not conflict)
 
-> `npm i ` 安装依赖
-> `gulp` 开发环境运行gulp任务
-> `gulp build` 生成dist
+## demos for now
 
-## 示例内容
+- drag and select
+- click float
+- polygon draw
+- ease-in-out function
 
-1. 列表拖拽选择
-2. 正多边形绘制
-3. ease-in-out线性函数
+## why scss files?
+
+I didn't use any `sass`/`scss` compiler, instead of them, i used `postcss` with `next-css` nesting/nested syntax.
+But my editor(vscode) pointed out the nested syntax as errors for `css` format, so i had to pleasure it by changing the file format to `scss`.

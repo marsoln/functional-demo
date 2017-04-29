@@ -1,0 +1,31 @@
+polygon {
+    background-color: #e3e3e3;
+    stroke: #ff47d9;
+    fill: #ace;
+}
+
+input {
+    border: none;
+    border-bottom: 2px solid #ace;
+    line-height: 26px;
+    min-width: 200px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    .header {
+        flex: 1
+    }
+    ul li {
+        padding: 0;
+    }
+}
+
+:global(#polygonContainer) {
+    flex: 3;
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+    height: 400px;
+}

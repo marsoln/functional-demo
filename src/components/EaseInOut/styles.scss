@@ -1,0 +1,12 @@
+.progress {
+    background: radial-gradient(circle, #d8dde8, #18abda);
+    border: 1px solid #e92;
+    border-radius: 2px;
+    height: 34px;
+    padding: 1px;
+    .bar {
+        background: rgba(35, 51, 28, .64);
+        height: 100%;
+        width: 0;
+    }
+}
