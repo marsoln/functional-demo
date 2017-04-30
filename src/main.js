@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
-import App from './components/App'
 import Router from './routes/'
 import './styles/main.scss'
 
@@ -29,12 +28,10 @@ if (window.devToolsExtension) {
   window.devToolsExtension.open()
 }
 
-// render(App)
 renderRoutes()
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    // render(App)
+  module.hot.accept('./routes/', () => {
     renderRoutes()
   })
 }

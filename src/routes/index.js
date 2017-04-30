@@ -10,6 +10,7 @@ import dragSelect from '../components/DragSelect'
 import clickFloat from '../components/ClickFloat'
 import easeInOut from '../components/EaseInOut'
 import polygon from '../components/Polygon'
+import taskQueue from '../components/TaskQueue'
 
 const routes = () => 
   <Router>
@@ -19,6 +20,7 @@ const routes = () =>
       <Route path='/clickFloat' component={clickFloat} />
       <Route path='/easeInOut' component={easeInOut} />
       <Route path='/polygon' component={polygon} />
+      <Route path='/taskQueue' component={taskQueue} />
     </div>
   </Router>
 

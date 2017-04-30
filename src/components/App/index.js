@@ -22,6 +22,9 @@ class App extends React.Component {
         }, {
           name: '多边形工具',
           action: '/polygon'
+        }, {
+          name: '串/并行任务队列',
+          action: '/taskQueue'
         }
       ]
     }

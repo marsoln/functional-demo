@@ -24,9 +24,13 @@ body {
     header {
         width: 100%;
     }
-    .container {
-        background-color: #eaeaea;
-        max-width: 80%;
-        margin: 0 auto;
+    input[type='number']:focus {
+        outline: none;
     }
+}
+
+ :global(.container) {
+    background-color: #eaeaea;
+    max-width: 80%;
+    margin: 0 auto;
 }

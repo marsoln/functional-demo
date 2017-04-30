@@ -4,7 +4,7 @@
 
 - install pkg via yarn `yarn install` or npm `npm i`
 - run dev server `yarn start` or `npm start`
-- view it in your browser `http://localhost:8080` (if the port is not conflict)
+- visit `http://localhost:8080` (if the port is not conflict) in your browser
 
 ## demos for now
 
