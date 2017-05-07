@@ -43,6 +43,10 @@ class TaskQueue {
     this.queue.push(task)
   }
 
+  getLength() {
+    return this.queue.length
+  }
+
   getState() {
     return {
       onHandle: this.onHandle,
@@ -80,6 +84,10 @@ class TaskQueue {
       return false
     } else if (this[abort]) {
       logger.warn(`Tasks abort.`)
+      this[finish]()
+      return false
+    } else if (this.queue.length === 0) {
+      logger.warn(`No task.`)
       this[finish]()
       return false
     } else {
@@ -191,7 +199,7 @@ class SerialQueue extends TaskQueue {
   }
 }
 
-export default {
+export {
   TaskCapsule,
   ParallelQueue,
   SerialQueue

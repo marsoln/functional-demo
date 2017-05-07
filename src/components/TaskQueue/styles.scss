@@ -1,0 +1,13 @@
+.info {
+    margin: 0 16px;
+    letter-spacing: 2px;
+}
+
+ul {
+    li {
+        background-color: lightgreen;
+        &:nth-child(even) {
+            background-color: #eaeaea;
+        }
+    }
+}

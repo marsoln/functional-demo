@@ -1,5 +1,3 @@
-// todo demo
-
 let noop = () => {};
 export default class Throttle {
   constructor() {

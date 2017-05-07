@@ -19,12 +19,18 @@ class App extends React.Component {
         {
           name: 'easeInOut函数',
           action: '/easeInOut'
-        }, {
+        },
+        {
           name: '多边形工具',
           action: '/polygon'
-        }, {
+        },
+        {
           name: '串/并行任务队列',
           action: '/taskQueue'
+        },
+        {
+          name: '延迟触发器',
+          action: '/throttle'
         }
       ]
     }

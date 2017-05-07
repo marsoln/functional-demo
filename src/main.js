@@ -6,15 +6,6 @@ import './styles/main.scss'
 
 const MOUNT_NODE = document.getElementById('root')
 
-let render = (Component) => {
-  ReactDOM.render(
-    <AppContainer >
-      <Component />
-    </AppContainer>,
-    MOUNT_NODE
-  )
-}
-
 let renderRoutes = () => {
   ReactDOM.render(
     <AppContainer >
