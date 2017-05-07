@@ -12,6 +12,7 @@
 - click float
 - polygon draw
 - ease-in-out function
+- parellel/serial task queue
 
 ## why scss files?
 
