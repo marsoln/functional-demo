@@ -76,8 +76,9 @@ export default class Polygon extends React.Component {
     let temp = new Array(+this.state.angleAmount).fill('')
     return <div className={styles.container}>
       <div className={styles.header}>
-        边数:<span>{this.state.angleAmount}</span>
+        <div className={styles.amount}>边数:<span>{this.state.angleAmount}</span></div>
         <input value={this.state.angleAmount} type='range' min="3" max="10" onChange={this.changeAmount} />
+        <hr/>
         <ul id='barsContainer'>
           {
             temp.map((t, i) => (

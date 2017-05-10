@@ -3,11 +3,15 @@
     letter-spacing: 2px;
 }
 
-ul {
-    li {
-        background-color: lightgreen;
-        &:nth-child(even) {
-            background-color: #eaeaea;
+.task {
+    ul {
+        width: 400px;
+        margin: 0 auto;
+        li {
+            background-color: lightgreen;
+            &:nth-child(even) {
+                background-color: #eaeaea;
+            }
         }
     }
 }

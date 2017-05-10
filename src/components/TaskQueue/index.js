@@ -6,8 +6,8 @@ import {
   SerialQueue
 } from '../../modules/taskQueue'
 
-let counter = 1
-
+let serialCounter = 1
+let parallelCounter = 1
 export default class TaskQueue extends React.Component {
   constructor() {
     super()
@@ -15,7 +15,7 @@ export default class TaskQueue extends React.Component {
     this.runParallelQueue = this.runParallelQueue.bind(this)
     this.runSerialQueue = this.runSerialQueue.bind(this)
     this.state = {
-      parallelQueue: new ParallelQueue(),
+      parallelQueue: new ParallelQueue(100),
       serialQueue: new SerialQueue(),
       logContent: []
     }
@@ -43,32 +43,41 @@ export default class TaskQueue extends React.Component {
     })
   }
 
-  createTask() {
-    let newTask = new TaskCapsule(() => {
-      let index = counter++
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          this.log(`Task No. [${index}] done!`)
-          resolve()
-        }, Math.random() * 2000 >>> 0)
+  createTask(type) {
+    let _ct = (counter) => {
+      return new TaskCapsule(() => {
+        let _begin = Date.now()
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            this.log(`Task No. [${counter}] done, execute duration ${(Date.now
+              () - _begin)} ms`)
+            resolve()
+          }, Math.random() * 2000 >>> 0)
+        })
       })
-    })
-    this.state.parallelQueue.add(newTask)
-    this.state.serialQueue.add(newTask)
+    }
+    if (type === 0) {
+      let newTask = _ct(parallelCounter++)
+      this.state.parallelQueue.add(newTask)
+    } else {
+      let newTask = _ct(serialCounter++)
+      this.state.serialQueue.add(newTask)
+    }
     this.forceUpdate()
   }
 
   render() {
-    return <div>
+    return <div className={styles.task}>
       <div>
         <span className={styles.info}>并行队列中任务数量:{this.state.parallelQueue.getLength()}</span>
         <button onClick={this.runParallelQueue}>Run</button>
+        <button onClick={() => { this.createTask(0) }}>Create Task</button>
       </div>
       <div>
         <span className={styles.info}>串行队列中任务数量:{this.state.serialQueue.getLength()}</span>
         <button onClick={this.runSerialQueue}>Run</button>
+        <button onClick={() => { this.createTask(1) }}>Create Task</button>
       </div>
-      <button onClick={this.createTask}>Create Task</button>
       <ul>
         {
           this.state.logContent.map((content, i) => (
