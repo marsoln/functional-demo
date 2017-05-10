@@ -47,15 +47,16 @@ export default class Polygon extends React.Component {
         this.redraw()
       }
     }, true)
-    this.redraw()
+
+    // fix issue
+    setTimeout(this.redraw.bind(this), 0)
   }
 
   changeAmount($event) {
     let newVal = $event.target.value
     this.setState({
       angleAmount: newVal
-    })
-    this.redraw()
+    }, this.redraw.bind(this))
   }
 
   redraw() {
@@ -78,7 +79,7 @@ export default class Polygon extends React.Component {
       <div className={styles.header}>
         <div className={styles.amount}>边数:<span>{this.state.angleAmount}</span></div>
         <input value={this.state.angleAmount} type='range' min="3" max="10" onChange={this.changeAmount} />
-        <hr/>
+        <hr />
         <ul id='barsContainer'>
           {
             temp.map((t, i) => (

@@ -1,14 +1,17 @@
 const path = require('path')
 const webpack = require('webpack')
 const pkg = require('./package.json')
+const isDebug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   name: 'client',
   target: 'web',
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    ...isDebug ? [
+      'react-hot-loader/patch',
+      'webpack-dev-server/client?http://localhost:8080',
+      'webpack/hot/only-dev-server',
+    ] : [],
     './src/main.js'
   ],
   output: {
@@ -40,11 +43,11 @@ module.exports = {
             'stage-2',
             'react'
           ],
-          plugins: [
+          plugins: isDebug ? [
             'react-hot-loader/babel',
             'transform-react-jsx-source',
             'transform-react-jsx-self'
-          ]
+          ] : []
         }
       },
       {
@@ -58,7 +61,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              sourceMap: true,
+              sourceMap: false,
               modules: true,
               localIdentName: '[name]-[local]-[hash:base64:5]',
               minimize: false,
@@ -73,19 +76,22 @@ module.exports = {
           }
         ]
       },
-      // {
-      //   test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      //   loader: 'file-loader',
-      //   query: {
-      //     name: '[path][name].[ext]?[hash:8]',
-      //   },
-      // }
     ]
   },
-  devtool: 'cheap-module-source-map',
+  devtool: isDebug ? 'cheap-module-source-map' : false,
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+    ...isDebug ?
+      [
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.NamedModulesPlugin(),
+      ] : [
+        new webpack.optimize.UglifyJsPlugin()
+      ],
+    new webpack.DefinePlugin({
+      "process.env": {
+        NODE_ENV: JSON.stringify("production")
+      }
+    })
   ],
   node: {
     fs: 'empty',

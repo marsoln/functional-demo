@@ -21,7 +21,7 @@ export default class Routes extends React.Component {
       demos: [
         {
           name: '拖拽选中 Drag&Select',
-          action: '/dragSelect'
+          action: '/'
         },
         {
           name: '点击浮动',
@@ -61,7 +61,7 @@ export default class Routes extends React.Component {
           </ul>
         </section>
         <section className={styles.body}>
-          <Route exact path='/dragSelect' component={dragSelect} />
+          <Route exact path='/' component={dragSelect} />
           <Route path='/clickFloat' component={clickFloat} />
           <Route path='/easeInOut' component={easeInOut} />
           <Route path='/polygon' component={polygon} />
