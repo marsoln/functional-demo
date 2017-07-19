@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run package --production",
     "package": "webpack --config webpack.config.js",
-    "dev": "webpack-dev-server --config webpack.config.js --quiet"
+    "start": "webpack-dev-server --config webpack.config.js --quiet"
   },
   "repository": {
     "type": "git",
